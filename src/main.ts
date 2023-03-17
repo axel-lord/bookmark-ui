@@ -1,3 +1,4 @@
+/*
 import { invoke } from "@tauri-apps/api/tauri";
 
 let greetInputEl: HTMLInputElement | null;
@@ -18,4 +19,12 @@ window.addEventListener("DOMContentLoaded", () => {
   document
     .querySelector("#greet-button")
     ?.addEventListener("click", () => greet());
+});
+*/
+
+// import init, {run_on_load} from "../src-wasm/pkg";
+import init, { run_on_load } from "src-wasm";
+
+init().then(() => {
+	run_on_load("Response Message");
 });
