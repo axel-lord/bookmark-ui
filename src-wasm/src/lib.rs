@@ -9,7 +9,7 @@ fn write_response() -> Option<()> {
     web_sys::window()?
         .document()?
         .get_element_by_id("response")?
-        .set_inner_html("Written by WASM");
+        .set_inner_html("Written from WASM");
 
     Some(())
 }
