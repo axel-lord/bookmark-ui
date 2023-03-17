@@ -27,4 +27,7 @@ export default defineConfig(async () => ({
     sourcemap: !!process.env.TAURI_DEBUG,
   },
   plugins: [wasmPack(['./src-wasm'])],
+  optimizeDeps: {
+	exclude: ['src-wasm'],
+  },
 }));
