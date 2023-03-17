@@ -1,15 +1,15 @@
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-pub fn run_on_load(name: &str) {
-    let _ = write_response(name);
+pub fn run_on_load() {
+    let _ = write_response();
 }
 
-fn write_response(name: &str) -> Option<()> {
+fn write_response() -> Option<()> {
     web_sys::window()?
         .document()?
         .get_element_by_id("response")?
-        .set_inner_html(name);
+        .set_inner_html("Written by WASM");
 
     Some(())
 }
