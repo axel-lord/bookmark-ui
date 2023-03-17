@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import wasmPack from 'vite-plugin-wasm-pack';
 
 const mobile =
   process.env.TAURI_PLATFORM === "android" ||
@@ -25,4 +26,5 @@ export default defineConfig(async () => ({
     // produce sourcemaps for debug builds
     sourcemap: !!process.env.TAURI_DEBUG,
   },
+  Plugins: [wasmPack('./src-wasm')],
 }));

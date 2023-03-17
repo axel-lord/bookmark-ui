@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="/src/styles.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bookmark Ui</title>
-    <script type="module" src="/src/main.ts" defer></script>
-  </head>
-	<h1>Hello there!</h1>
-  <body>
-  </body>
+
+<head>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="/src/styles.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Bookmark Ui</title>
+	<script type="module" src="/src/main.ts" async></script>
+</head>
+<h1>Hello there!</h1>
+<p id="response"></p>
+<!-- <script type="module">
+	import init, {run_on_load} from "./src-wasm/pkg/bookmark_ui_wasm.js";
+	init().then(() => {
+		run_on_load("WebAssembly")
+	});
+</script> /!-->
+
+<body>
+</body>
+
 </html>
