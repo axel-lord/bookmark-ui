@@ -1,15 +1,14 @@
 use wasm_bindgen::prelude::*;
+use web_sys::console;
 
 #[wasm_bindgen]
 pub fn run_on_load() {
-    let _ = write_response();
+    if let Err(e) = write_response() {
+        console::log_1(&e);
+    }
 }
 
-fn write_response() -> Option<()> {
-    web_sys::window()?
-        .document()?
-        .get_element_by_id("response")?
-        .set_inner_html("Written from WASM");
-
-    Some(())
+fn write_response() -> Result<(), JsValue> {
+    console::log_1(&"WASM loaded".into());
+    Ok(())
 }
