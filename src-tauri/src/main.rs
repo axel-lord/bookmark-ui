@@ -43,9 +43,18 @@ async fn open_bookmark_file() -> Result<bookmark_data::Data, Error> {
         .pipe(Ok)
 }
 
+#[tauri::command]
+async fn open_in_browser(link: String) -> Result<(), Error> {
+    open::that(link)?;
+    Ok(())
+}
+
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![open_bookmark_file])
+        .invoke_handler(tauri::generate_handler![
+            open_bookmark_file,
+            open_in_browser
+        ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

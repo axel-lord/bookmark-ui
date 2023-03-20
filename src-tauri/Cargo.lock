@@ -120,6 +120,7 @@ version = "0.0.0"
 dependencies = [
  "bookmark-data",
  "native-dialog",
+ "open 4.0.0",
  "rmp",
  "serde",
  "serde_json",
@@ -1620,6 +1621,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "open"
+version = "4.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bd61e3bf9d78956c72ee864bba52431f7f43994b21a17e9e72596a81bd61075b"
+dependencies = [
+ "pathdiff",
+]
+
+[[package]]
 name = "overload"
 version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2530,7 +2540,7 @@ dependencies = [
  "ignore",
  "objc",
  "once_cell",
- "open",
+ "open 3.4.0",
  "percent-encoding",
  "rand 0.8.5",
  "raw-window-handle 0.5.1",
