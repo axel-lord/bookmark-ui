@@ -31,14 +31,14 @@ document.querySelector("#open-btn")?.addEventListener("click", () => {
 
 		console.log(content)
 		for (let bookmark of content.bookmark) {
-			const link = <HTMLAnchorElement>document.createElement("a")
+			const link = document.createElement("a")
 			link.textContent = bookmark.url;
 			link.href = bookmark.url
 
-			const info = <HTMLParagraphElement>document.createElement("p")
+			const info = document.createElement("p")
 			info.textContent = bookmark.info;
 
-			const row = <HTMLLIElement>document.createElement("li")
+			const row = document.createElement("li")
 			row.append(info, link)
 
 			list.append(row)
